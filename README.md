@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📅 Recurring Date Picker Component
 
-## Getting Started
+A reusable React component built with **Next.js App Router**, **Tailwind CSS**, and **Zustand** for selecting recurring dates with flexible rules. It includes a mini calendar preview to visually display selected recurring dates.
 
-First, run the development server:
+## 🧩 Features
+
+- Select start and end dates
+- Choose recurrence frequency: daily, weekly, monthly, yearly
+- Set recurrence interval (e.g. every 2 weeks)
+- For weekly frequency, select specific days (e.g. Mon/Wed/Fri)
+- Calendar preview showing selected recurring dates
+- Fully reusable and customizable for apps like event scheduling, tasks, reminders, etc.
+
+---
+
+## 🛠 Tech Stack
+
+- **Framework:** Next.js (App Router)
+- **State Management:** Zustand
+- **Styling:** Tailwind CSS
+- **Date Management:** date-fns
+- **Optional Date Picker:** react-datepicker
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repo
 
 ```bash
+git clone https://github.com/Mridul9A/recurring-date-picker.git
+cd recurring-date-picker
+
+```
+2. Install Dependencies
+```
+npm install
+# or
+yarn install
+```
+
+3. Run the Dev Server
+```
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Open http://localhost:3000 in your browser.
+
+## Folder Structure
+```
+src/
+├── app/
+│   └── page.tsx                # Main UI page with the component
+├── components/
+│   └── RecurringDatePicker.tsx # The main recurring date picker component
+├── store/
+│   └── recurrenceStore.ts       # Zustand store for managing recurrence state
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dependencies
+```
+{
+  "next": "14.x",
+  "react": "18.x",
+  "react-dom": "18.x",
+  "zustand": "^4.x",
+  "date-fns": "^3.x",
+  "react-datepicker": "^4.x", // if you're using <DatePicker />
+  "tailwindcss": "^3.x",
+  "postcss": "^8.x",
+  "autoprefixer": "^10.x",
+  "typescript": "^5.x"
+}
+```
+Install manually if needed:
+```
+npm install zustand date-fns react-datepicker
+```
+Tailwind setup:
+```
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
+```
+import RecurringDatePicker from "@/components/RecurringDatePicker";
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+export default function HomePage() {
+  return (
+    <main>
+      <h1>Recurring Date Picker Demo</h1>
+      <RecurringDatePicker />
+    </main>
+  );
+}
+```
 
-## Learn More
+## License
+MIT License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+Made with ❤️ by Mridul
