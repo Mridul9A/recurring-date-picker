@@ -79,8 +79,20 @@ npm install zustand date-fns react-datepicker
 ```
 Tailwind setup:
 ```
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
+npm install tailwindcss @tailwindcss/postcss postcss
+```
+### postcss.config.mjs
+```
+const config = {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+};
+export default config;
+```
+### globals.css
+```
+@import "tailwindcss";
 ```
 
 ## Usage
